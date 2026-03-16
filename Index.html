@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portal de Noticias</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<script>
+
+function cargarPagina(pagina){
+fetch(pagina)
+.then(respuesta => respuesta.text())
+.then(data => {
+document.getElementById("contenido").innerHTML = data;
+});
+}
+
+window.onload = function(){
+cargarPagina("inicio.html");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>NOTICIAS PERUANAS</h1>
+<p>Información actualizada del país y el mundo</p>
+</header>
+
+<nav>
+
+<a href="#" onclick="cargarPagina('inicio.html')">INICIO</a>
+<a href="#" onclick="cargarPagina('nacionales.html')">NACIONALES</a>
+<a href="#" onclick="cargarPagina('deportes.html')">DEPORTES</a>
+<a href="#" onclick="cargarPagina('espectaculos.html')">ESPECTÁCULOS</a>
+<a href="#" onclick="cargarPagina('cultura.html')">CULTURA</a>
+<a href="#" onclick="cargarPagina('contacto.html')">CONTACTO</a>
+
+</nav>
+
+<main>
+
+<div id="contenido"></div>
+
+</main>
+
+<footer>
+
+<p>Portal de Noticias © 2026</p>
+<p>contacto@portalnoticias.com</p>
+
+</footer>
+
+</body>
+</html>
+```
